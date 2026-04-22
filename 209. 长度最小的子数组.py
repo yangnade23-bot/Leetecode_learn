@@ -24,3 +24,18 @@ class Solution1:
         return min_len if min_len!=n+1 else 0
 
         
+class Solution2:
+    # 滑动窗口
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        slow = 0
+        fast = 0
+        sum = 0
+        min_ken = float('inf')
+        while fast < len(nums):
+            sum += nums[fast]
+            while sum >= target:
+                min_len = min(min_len, fast - slow + 1)
+                sum -= nums[slow]
+                slow += 1
+            fast += 1
+        return min_len if min_len != float('inf') else 0
