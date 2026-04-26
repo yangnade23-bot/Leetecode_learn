@@ -6,3 +6,5 @@ if __name__ == '__main__':
     s = Solution()
     ans = s.sum(1,2)
     assert ans == 3, "错了"
+
+# 2026年4月26日 水一下
