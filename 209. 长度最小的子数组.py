@@ -30,7 +30,7 @@ class Solution2:
         slow = 0
         fast = 0
         sum = 0
-        min_ken = float('inf')
+        min_ken = float('inf') 
         while fast < len(nums):
             sum += nums[fast]
             while sum >= target:
