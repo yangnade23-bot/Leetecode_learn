@@ -1,0 +1,28 @@
+"""
+给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，
+且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
+"""
+
+class Solution:
+    def generateMatrix(self, n: int) -> List[List[int]]:
+        mat = [[0] * n for _ in range(n)]
+        count = 0
+        start_index = 0
+        while not count >= n ** 2:
+            for j in range(start_index, n - 1 - start_index):
+                mat[start_index][j] = count
+                count += 1
+            for i in range(start_index, n - 1 - start_index):
+                mat[i][n - 1 - start_index] = count
+                count += 1
+            for j in range(n - 1 - start_index, start_index, -1):
+                mat[n - 1 - start_index][j] = count
+                count += 1
+            for i in range(n - 1 - start_index, start_index, -1):
+                mat[i][start_index] = count
+                count += 1
+            start_index += 1
+
+        if n % 2 == 1:
+            mat[n // 2][n // 2] = count
+        return mat
