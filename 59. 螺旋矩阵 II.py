@@ -32,3 +32,5 @@ if __name__ == '__main__':
     n = 3
     sol = Solution()
     print(sol.generateMatrix(n))
+
+# 刷记录的
